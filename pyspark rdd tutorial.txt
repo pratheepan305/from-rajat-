@@ -1,0 +1,163 @@
+In 1990
+if you have to buy the groceries item : Physcially
+if you have to buy the electronic item : Physcially
+if you have to buy the food item : Physcially
+
+the amount of data in 1990 was so small
+
+the uses of internet was minimal
+
+100k records: 1 server can easily process even u can store also
+
+data
+
+they used to focus more on functionality instead of performance.
+
+
+Now 2020 (Everything is Online)
+
+
+if you have to buy the groceries item : Online
+if you have to buy the electronic item : Online
+if you have to buy the food item : Online
+if you have to travel : Online
+
+
+Big Data (Like Netflix, amazon Prime data for example) : It is a Problem
+
+Big Data : it is a problem : because of use of internet
+
+1 hour : can server process 50TB : Not possible
+----------------------------------------------------------------------------------------------------------------
+How To Store Big Data???
+----------------------------------------------------------------------------------------------------------------
+trainer : 1
+students : 29
+
+1 server will act as master (master server: It should be with latest technology)
+remaining will act as slave just follow what master says (Slave server : It can be of commodity hardware)
+
+High data storing in 1 server will create fear of data loss when server is crash.
+
+50 TB: it is distributed to the 5 servers.
+1 is the master server who knows where data is getting distributed.
+
+Distributed system( Master Slave Architecture)
+Master Slave Architecture : master knows where data is getting distributed and slave follows instructions from master and save the data.
+
+
+Hadoop Distributed File System (HDFS) : (Haddop its a technology, Distributed System its a Master Slave Architecture, File its a where it going to get save into the servers) 
+Hadoop uses HDFS to store Big Data (It store data into Hard Disk)
+Hadoop is Distributed system (Advantage of DS is it can distribute data in blocks)
+
+-----------------------------------------------------------------------------------------------------------------
+Processing of the Data??
+-----------------------------------------------------------------------------------------------------------------
+Map - Reduce : It use is work in format of mapping ( Key and Value Pair)
+
+how processing happens: 
+Hard Disk						RAM									Microprocessor
+Magnetic Tape Device			Semi Conductor device				Semi -Conductor device(1's and 0's)
+ 
+Dictionary or Map -Reduce:
+it is used to process the data inside the RAM but it used to save the intermediate result to the HDFS.
+
+if 4 dependencey : 8 I/O operation : reading writing in HDFS : which result in mor RESPONSE TIME : thus to avoid this Apache Spark plays it roles.
+
+------------------------------------------------------------------------------------------------------------------
+Apache Spark
+------------------------------------------------------------------------------------------------------------------
+
+It is used to process the data inside the RAM and as well as it used to save the intermediate results into the RAM( for longer time)
+
+Giant companys use Apache Spark: (almost all big companies : Amazon, Netflix, Autodesk, etc)
+
+Apache Spark is used in Distributed Manner
+Spark =  it is dataprocessing framework
+
+SparkSession : For the Spark session
+SparkContext : 
+
+I can access any method or functions of spark.
+
+type of data in SQL:
+1: UnStructured Data : Schemaless data
+2: Semi-Structured Data : tabular form
+3: Structured Data : Tabular form (Rows and Columns)
+
+in Spark we learn 2 type DataStructure:
+
+1. RDD( Resilient Distributed Dataset)
+2. DataFrame
+
+
+-------------------------------------------------------------------------------------------------------------------
+Q: How does the Sparks works?
+
+Lazy Evulation
+a:Transformation 
+Here we use to Transform the data using below transformation.
+		1. map : done
+		2. flatmap :done
+		3. filter : done
+		4. union : done
+		5. intersection : done
+		6. reduceByKey :
+		7. sort
+		8. join
+b: Action
+		1. collect
+		2. count
+		
+//// Transformation only works when it is succeded by Action
+ 
+ 
+ ---------------------------------------------------------------------------------------------------------------------
+Problem:
+----------------------------------------------------------------------------------------------------------------------
+Words:
+
+['one',
+'two',
+'two',
+'four',
+'five',
+'six',
+'six',
+'eight',
+'nine',
+'ten',
+'three']
+
+step1:
+
+rdd_converted
+[
+('one',1),
+('two',1),
+('two',1),
+('four',1),
+('five',1),
+('six',1),
+('six',1),
+('eight',1),
+('nine',1),
+('ten',1),
+('three',1)
+]
+
+step2:
+
+[
+('one',1),
+('two',2),
+('four',1),
+('five',1),
+('six',2),
+('eight',1),
+('nine',1),
+('ten',1),
+('three',1)
+]
+
+" Here, we reduce the key and add the value { "two" : 1,"two":1} = {"two":2}
